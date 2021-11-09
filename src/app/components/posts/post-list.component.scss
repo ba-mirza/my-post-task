@@ -1,0 +1,43 @@
+* {
+  color: #202020;
+}
+
+.post {
+
+  h1 {
+    margin-top: 25px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .example-card {
+    // display:block;
+    margin-top: 25px;
+    max-width: 1000px;
+    background-color: #fff;
+    max-height: 240px;
+    padding: 25px 25px;
+
+    .mat-stroked-button{
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+
+    .mat-card-subtitle {
+      padding-top: 10px;
+      display: inline-block;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+}
