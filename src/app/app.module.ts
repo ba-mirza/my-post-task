@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
@@ -17,6 +18,7 @@ import { DataService } from './data.service';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { PostListComponent } from './components/posts/post-list.component';
 import { PostComponent } from './components/post/post.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { PostComponent } from './components/post/post.component';
     ListUsersComponent,
     PostListComponent,
     PostComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,

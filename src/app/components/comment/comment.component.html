@@ -1,0 +1,21 @@
+<h2>Комментарии:</h2>
+<div *ngFor="let com of coms" class="recall">
+    <div class="recall--block">
+        <h5>Анонимно</h5>
+        <p>{{com}}</p>
+    </div>
+</div>
+
+<div class="div">
+  <form (ngSubmit)="ngSubmit()">
+    <!-- <mat-form-field>
+      <mat-label>Имя</mat-label>
+      <input name="name" [(ngModel)]="comsName" matInput />
+    </mat-form-field> -->
+    <mat-form-field>
+      <mat-label>Оставить комментарий</mat-label>
+      <textarea name="text" [(ngModel)]="comsText" rows="5" matInput></textarea>
+    </mat-form-field>
+    <button [disabled]="comsText == ''" mat-stroked-button type="submit">Оставить комментарий</button>
+  </form>
+</div>

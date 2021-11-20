@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/data.service';
+import { GetPostsInterface } from 'src/app/types/getPostsInterface';
 
 @Component({
   selector: 'app-post',
@@ -10,12 +11,12 @@ import { DataService } from 'src/app/data.service';
 
 export class PostComponent implements OnInit {
 
-  constructor(private activeRoute: ActivatedRoute, private service: DataService) { }
+  public post: any;
 
-  ngOnInit(): void {
-    // let postId = this.activeRoute.snapshot.paramMap.get("id");
-    // this.service.getDataPost(+postId)
-    // .subscribe(p => console.log(p));
+  constructor(private activeRoute: ActivatedRoute, private service: DataService) {
+    this.service.getPosts().subscribe((post): GetPostsInterface => this.post = post);
   }
+  
+  ngOnInit(): void {}
 
 }

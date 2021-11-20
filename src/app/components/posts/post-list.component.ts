@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
-
-export interface dbPosts {
-  id: number;
-  title: string;
-  contents: string;
-}
-
+import { GetPostsInterface } from 'src/app/types/getPostsInterface';
 @Component({
   selector: 'app-list-posts',
   templateUrl: './post-list.component.html',
@@ -14,16 +8,13 @@ export interface dbPosts {
 })
 export class PostListComponent implements OnInit {
 
-  public content:string = "";
-  public posts = [];
+  public posts: any;
 
   constructor(private service: DataService) {
-    this.service.consoleText("hw");
-    this.content = this.service.longText;
+    this.service.getPosts().subscribe((post): GetPostsInterface => this.posts = post)
   }
 
   ngOnInit(): void {
-    this.service.getPosts().subscribe((posts: any) => this.posts = posts);
-    console.log(this.posts);
+
   }
 }

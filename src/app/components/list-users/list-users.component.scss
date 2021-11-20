@@ -2,9 +2,18 @@
     color: #202020;
 }
 
+// table {
+//     width: 100%;
+//     background-color: #fafafa;
+// }
+
+@mixin table($size, $bg) {
+    width: $size;
+    background-color: $bg;
+}
+
 table {
-    width: 100%;
-    background-color: #fafafa;
+    @include table(100%, #fafafa)
 }
 
 .mat-form-field {
